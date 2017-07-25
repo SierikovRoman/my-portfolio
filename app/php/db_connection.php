@@ -2,11 +2,19 @@
 
 require 'config.php';
 
+
 $con = pg_connect("
-	host=ec2-107-20-255-96.compute-1.amazonaws.com 
-	port=5432 
-	dbname=d38omjdcqrpnjb
-	user=kovtequyzrgzkl
-	password=64814fa2532666cc5598d872e1aace8a2ee998ff40c4afcc83d0b3b75af15619
+	host='$host'
+	port='$port' 
+	dbname='$dbname'
+	user='$user'
+	password='$password'
 	") or die("Could not connect" . pg_last_error());
+
+// $stat = pg_connection_status($con);
+// if ($stat === PGSQL_CONNECTION_OK) {
+//   echo 'Connection status ok';
+// } else {
+//   echo 'Connection status bad';
+// }
 ?>
