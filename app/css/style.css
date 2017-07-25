@@ -1,0 +1,134 @@
+@font-face {
+  font-family: Roboto Bold;
+  src: url("/app/font/RobotoTTF/Roboto-Bold.ttf");
+}
+
+@font-face {
+  font-family: Roboto Medium;
+  src: url("/app/font/RobotoTTF/Roboto-Medium.ttf");
+}
+
+@font-face {
+  font-family: Roboto Light;
+  src: url("/app/font/RobotoTTF/Roboto-Light.ttf");
+}
+
+@font-face {
+  font-family: Roboto Thin;
+  src: url("/app/font/RobotoTTF/Roboto-Thin.ttf");
+}
+
+@font-face {
+  font-family: Roboto ThinItalic;
+  src: url("/app/font/RobotoTTF/Roboto-ThinItalic.ttf");
+}
+
+@font-face {
+  font-family: RobotoCondensed-BoldItalic;
+  src: url("/app/font/Roboto-Condensed/RobotoCondensed-BoldItalic.ttf");
+}
+
+@font-face {
+  font-family: RobotoCondensed-Italic;
+  src: url("/app/font/Roboto-Condensed/RobotoCondensed-Italic.ttf");
+}
+
+@font-face {
+  font-family: RobotoCondensed-Light;
+  src: url("/app/font/Roboto-Condensed/RobotoCondensed-Light.ttf");
+}
+
+@font-face {
+  font-family: RobotoCondensed-LightItalic;
+  src: url("/app/font/Roboto-Condensed/RobotoCondensed-LightItalic.ttf");
+}
+
+@font-face {
+  font-family: RobotoCondensed-Regular;
+  src: url("/app/font/Roboto-Condensed/RobotoCondensed-Regular.ttf");
+}
+
+body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.cf {
+  padding: 0 !important;
+}
+
+.top_block {
+  position: relative;
+  background: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  padding: 0;
+}
+
+.top_block:before {
+  content: ' ';
+  background-image: url("/app/images/wallpaper.png");
+  -webkit-background-size: cover;
+          background-size: cover;
+  opacity: 0.5;
+  width: 100%;
+  height: 300px;
+  display: block;
+  position: relative;
+}
+
+.brand {
+  font-family: "Roboto Medium", serif;
+  font-size: 32px;
+  text-align: center;
+}
+
+.order-block {
+  position: absolute;
+  top: 250px;
+  width: 300px;
+  height: 50px;
+  right: 50px;
+  outline: 1px solid red;
+}
+
+.order-button {
+  background-color: #111;
+  color: #FFF;
+  font-family: "Roboto Medium", serif;
+  font-size: 18px;
+  position: absolute;
+  bottom: 0;
+  left: 90px;
+}
+
+.btn:focus {
+  outline: none !important;
+}
+
+/* NAVIGATION-MENU */
+.nav-option {
+  font-family: "RobotoCondensed-Bold", sans-serif;
+  letter-spacing: 0.05em;
+  font-size: 2.7em;
+  color: #111;
+  overflow: hidden;
+  outline: 1px solid red;
+}
+
+/* VIDEO BLOCK */
+li {
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+
+.video-table {
+  margin-top: 20px;
+}
+
+.video {
+  width: 100%;
+  height: 400px;
+  display: block;
+  background: rgba(0, 0, 0, 0.3);
+}
