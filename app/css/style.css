@@ -48,10 +48,34 @@
   src: url("/app/font/Roboto-Condensed/RobotoCondensed-Regular.ttf");
 }
 
+/* PLUME */
+@font-face {
+  font-family: Plume;
+  src: url("/app/font/PlumeFF/Plume-Free-Brush-Font.otf");
+}
+
+/* Fonts variable */
+/* Colors variable */
+/* Size variable */
+/* MAIN BLOCK */
 body {
   height: 100%;
   overflow-x: hidden;
   overflow-y: scroll;
+}
+
+.btn:focus {
+  outline: none !important;
+}
+
+.form-control:focus {
+  border-color: #111;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .cf {
@@ -60,46 +84,68 @@ body {
 
 .top_block {
   position: relative;
-  background: rgba(0, 0, 0, 0.2);
   overflow: hidden;
   padding: 0;
 }
 
 .top_block:before {
   content: ' ';
-  background-image: url("/app/images/wallpaper.png");
+  background-image: url("/app/images/wallpaper_2.png");
   -webkit-background-size: cover;
           background-size: cover;
   opacity: 0.5;
   width: 100%;
-  height: 300px;
+  height: 200px;
   display: block;
   position: relative;
 }
 
 .brand {
-  font-family: "Roboto Medium", serif;
-  font-size: 32px;
-  text-align: center;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 10px;
+  height: 120px;
+}
+
+.brand-name {
+  font-family: "Plume", serif;
+  font-size: 8vw;
+  margin-top: 0px;
+}
+
+.brand-desc {
+  font-family: "Plume", serif;
+  font-size: 4vw;
+  margin-top: -25px;
 }
 
 .order-block {
   position: absolute;
-  top: 250px;
-  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  top: 150px;
+  left: 0;
+  right: 0;
+  width: 150px;
   height: 50px;
-  right: 50px;
-  outline: 1px solid red;
+  text-align: right;
+  padding: 0;
 }
 
 .order-button {
-  background-color: #111;
-  color: #FFF;
+  background-color: transparent;
+  color: #111;
   font-family: "Roboto Medium", serif;
-  font-size: 18px;
-  position: absolute;
-  bottom: 0;
-  left: 90px;
+  font-size: 22px;
+  border: 3px solid #111;
+  -webkit-border-radius: 0px;
+          border-radius: 0px;
+  padding: 0 5px 0 5px;
+}
+
+.glyphicon-envelope {
+  font-size: 19px !important;
 }
 
 .btn:focus {
@@ -107,13 +153,21 @@ body {
 }
 
 /* NAVIGATION-MENU */
+.nav-menu {
+  padding: 0;
+}
+
+.nv {
+  padding: 0;
+  overflow: hidden;
+}
+
 .nav-option {
   font-family: "RobotoCondensed-Bold", sans-serif;
   letter-spacing: 0.05em;
   font-size: 2.7em;
   color: #111;
   overflow: hidden;
-  outline: 1px solid red;
 }
 
 /* VIDEO BLOCK */
@@ -130,5 +184,221 @@ li {
   width: 100%;
   height: 400px;
   display: block;
-  background: rgba(0, 0, 0, 0.3);
+}
+
+/* PHOTO BLOCK */
+.photo_block {
+  margin: 10px 0 20px 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.image-block {
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+  min-height: 280px;
+  max-height: auto;
+}
+
+.image:hover {
+  opacity: 0.5;
+}
+
+.i {
+  padding: 0 10px 0 10px;
+  margin-top: 10px;
+}
+
+.photo-set-title {
+  font-family: "Roboto Thin", serif;
+  letter-spacing: 0.05em;
+  font-size: 18pt;
+  color: #000;
+  text-align: left;
+  overflow: hidden;
+}
+
+.set-title {
+  font-family: "Roboto Thin", serif;
+  letter-spacing: 0.05em;
+  font-size: 18pt;
+  color: #FFF;
+  overflow: hidden;
+}
+
+.thumbnail {
+  border: none !important;
+  background-color: none !important;
+  -webkit-border-radius: none !important;
+          border-radius: none !important;
+  padding: 0 !important;
+  width: 350px;
+  height: 350px;
+}
+
+.thumbnail img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* COMMING SOON */
+.comming_soon {
+  margin: 100px 0 20px 0;
+  padding: 0;
+  min-height: 450px;
+  vertical-align: middle;
+}
+
+/* FOOTER */
+.em-us {
+  padding-left: 11px;
+}
+
+.footer {
+  width: 100%;
+  height: 40px;
+  background-color: #000;
+  text-align: center;
+  padding-top: 10px;
+  margin-top: 40px;
+}
+
+.footer-text {
+  font-family: "Roboto Thin", serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* EMAIL US MODAL */
+.modal {
+  top: 150px !important;
+}
+
+.modal-header, .modal-footer {
+  border-bottom: none !important;
+  border-top: none !important;
+}
+
+.modal-header {
+  padding-bottom: 0;
+}
+
+.modal-footer {
+  padding: 0;
+}
+
+.modal-content {
+  color: #FFF;
+  border: 2px solid #111;
+  -webkit-border-radius: 0px;
+          border-radius: 0px;
+}
+
+.modal-content:before {
+  content: ' ';
+  background-image: url("/app/images/wallpaper_2.png");
+  -webkit-background-size: cover;
+          background-size: cover;
+}
+
+.close {
+  color: #111 !important;
+  opacity: 0.8 !important;
+  line-height: 0.5;
+  outline: none !important;
+}
+
+.s-close {
+  font-size: 32px;
+}
+
+textarea {
+  resize: none;
+}
+
+.fc {
+  border: 2px solid #111;
+  -webkit-border-radius: 0 !important;
+          border-radius: 0 !important;
+  font-family: "Roboto Light", serif;
+  font-size: 14px;
+}
+
+.send-button {
+  background-color: #111;
+  color: #FFF;
+  font-family: "Roboto Medium", serif;
+  font-size: 18px;
+  letter-spacing: 0.0625em;
+  -webkit-border-radius: 0 !important;
+          border-radius: 0 !important;
+}
+
+.send-button:hover {
+  color: #fff600;
+}
+
+.glyphicon-send {
+  font-size: 16px !important;
+}
+
+/* MEDIA */
+@media screen and (max-width: 1200px) {
+  .brand-name {
+    margin-top: 10px;
+    font-size: 12vw;
+  }
+  .nav-option {
+    font-size: 3vw;
+  }
+  .brand-desc {
+    margin-top: 0;
+    font-size: 4vw;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .brand-name {
+    margin-top: 10px;
+    font-size: 12vw;
+  }
+  .nav-option {
+    font-size: 3vw;
+  }
+  .brand-desc {
+    margin-top: 0;
+    font-size: 4vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .brand-name {
+    margin-top: 40px;
+    font-size: 12vw;
+  }
+  .nav-option {
+    font-size: 3vw;
+  }
+  .brand-desc {
+    margin-top: 0;
+    font-size: 4vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .brand-name {
+    margin-top: 5px;
+    font-size: 14vw;
+  }
+  .brand-desc {
+    margin-top: 0;
+    font-size: 6vw;
+  }
 }

@@ -1,12 +1,12 @@
 // Application module
 (function () {
 
-	var app = angular.module('MyApp', ['ngRoute']);
+	var app = angular.module('MyApp', ['ngRoute', 'ng.group']);
 	var $window;
 	app.config(function ($locationProvider, $routeProvider, $windowProvider, $sceDelegateProvider) {
 		$window = $windowProvider.$get();
    		// console.log($window);
-		$locationProvider.html5Mode(true);
+		$locationProvider.html5Mode(false);
 		$routeProvider
 
 		.when('/', {
@@ -24,8 +24,8 @@
 			controller: 'VideoController'
 		})
 		
-		.when('/Organization', {
-			templateUrl: '/app/templates/organization.html',
+		.when('/Coming_soon', {
+			templateUrl: '/app/templates/coming_soon.html',
 			controller: 'OrganizationController'
 		});
 
@@ -63,8 +63,50 @@
 
 	app.controller("PhotoController",['$scope','$http', function($scope,$http){
 
+		// getSet();
+		// function getSet(){
+		// 	$http.post('../../app/php/get_set.php').success(function(data){
+		// 		if(data != null){
+		// 			$scope.set = data;
+		// 			$scope.length = $scope.set.length;
+		// 			console.log($scope.length);
+
+		// 		};
+		// 	});
+		// };
+		
+
+		getSet();
+		function getSet(){
+			$http.get('../../app/php/results.json').success(function(data){
+				if(data != null){
+					$scope.set = data;
+					// $scope.length = $scope.set.length;
+					console.log($scope.set);
+					// console.log($scope.length);
+
+				};
+			});
+		};
+
+		$scope.getSetId = function(id){
+			$scope.setId = id;
+			console.log(id);
+		}
+	
+
+		// getPhoto();
+		// function getPhoto(){
+		// 	$http.post('../../app/php/get_photo.php').success(function(data){
+		// 		if(data != null){
+		// 			$scope.photo = data;
+		// 			console.log($scope.photo);
+		// 		};
+		// 	});
+		// };
 
 	}]);
+
 
 	app.controller("OrganizationController",['$scope','$http', function($scope,$http){
 
