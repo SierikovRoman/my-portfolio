@@ -1,0 +1,61 @@
+<div class="modal-dialog modal-w" role="document">
+  <div class="modal-slider">
+    <div class="modal-header">
+      <button type="button" class="close close-slider" ng-click="$close()" data-dismiss="modal" aria-label="Close"><span class="slider-close" aria-hidden="true">&times;</span></button>
+      <h4 class="set-title" align="center">{{setName}}</h4>
+    </div>
+    <div class="modal-body mb">
+        <div class="my-slider" align="center">
+          <div class="item" ng-repeat="p in photo" >
+            <img ng-src="{{'/app/images/' + p}}">
+          </div>      
+        </div>   
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.my-slider').slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    adaptiveHeight: true,
+    fade: true,
+    cssEase: 'linear'
+  });
+
+function getHeight(){
+  var h = $(window).height();
+  // console.log(h);
+  var w = $(window).width();
+  $('.my-slider, .slick-list, .modal-content').css({
+    height: h-122
+  });
+  $('.item').css({
+    height: h-122
+  });
+  $('.im').css({
+    // height: h-122
+    // height: '100%'
+  });
+  // const mq = window.matchMedia( "(max-width: 425px)" );
+  // if (mq.matches) {
+  // $('.im').css({
+  //     height: 'auto'
+  //   });
+  // }
+};
+
+getHeight();
+
+$(window).resize(getHeight);
+
+});
+
+</script>
+
+
+

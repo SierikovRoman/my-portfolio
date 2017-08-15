@@ -1,13 +1,13 @@
-<div class="modal fade" id="emailUs" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+<div class="modal madal_us fade" id="emailUs" tabindex="-1" role="dialog">
+  <div class="md" role="document">
+    <div class="modal-content mc">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="s-close">&times;</span></button>
         <h4 class="set-title" align="center"></h4>
       </div>
       <div class="modal-body">
 
-        <form name="emailUs" method="POST" ng-submit="sendEmail(info)">
+        <form name="emailUs" method="POST" ng-controller="MailUsController" ng-submit="sendEmail(info)">
 
           <div class="form-group">
             <input
@@ -21,6 +21,7 @@
             </div>
 
             <div class="form-group">
+                <p class="text-danger err-name hide">Please enter real name!</p>
                 <p class="text-danger" ng-show="emailUs.userName.$invalid && emailUs.userName.$dirty">Name field is empty!</p>
             </div>
 
@@ -36,6 +37,7 @@
             </div>
             
             <div class="form-group">
+                <p class="text-danger err-email hide">Please enter real email!</p>
                 <p class="text-danger" ng-show="emailUs.userEmail.$invalid && emailUs.userEmail.$dirty">Email field is empty!</p>
             </div>
 
@@ -48,13 +50,16 @@
                   placeholder="Here you can write some description or question for us..."
                   ng-model="info.userText"
                   maxlength="500"
-                  />
+                  required/>
             </textarea>
             </div>
             
+            <div class="form-group">
+                <p class="text-danger" ng-show="emailUs.userText.$invalid && emailUs.userText.$dirty">Sorry, but your mesage is empty!</p>
+            </div>
 
             <div class="modal-footer">                
-                <button class="btn send-button" ng-disabled="emailUs.$invalid">
+                <button class="btn send-button" ng-disabled="emailUs.$invalid" ng-click="swal()">
                 <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
                 SEND</button>
             </div>
@@ -65,3 +70,18 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
