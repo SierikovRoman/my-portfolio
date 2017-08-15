@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Video Production</title>
+	<title>Portfolio</title>
 	<!-- <base href="/"> -->
 
 	<link rel="stylesheet" type="text/css" href="app/libs/bootstrap/dist/css/bootstrap.min.css">
@@ -17,7 +17,6 @@
 
 </head>
 <body ng-app="MyApp">
-<!-- <div class="preloader"></div> -->
 
 <div class="container-fluid cf" ng-controller="MainController">
 
@@ -28,7 +27,6 @@
 		<ng-view></ng-view>
 	</div>
 	
-	<!-- <ng-include src="'app/templates/sliderModal.html'"></ng-include> -->
 	<ng-include src="'app/templates/emailUsModal.html'"></ng-include>
 	<ng-include src="'app/templates/footer.html'"></ng-include>
 
@@ -42,15 +40,15 @@
 <script src="app/libs/slick-1.6.0/slick/slick.js"></script>  
 <script src="app/libs/angular/angular.js"></script>
 <script src="app/libs/angular/angular-route.min.js"></script>
-<script src="app/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="app/libs/sweetalert2/dist/sweetalert2.min.js"></script>
-<script src="app/libs/core-js/core.js"></script>
-<script src="app/libs/angular/ui-bootstrap-tpls-0.12.0.min.js"></script>
+<script src="app/libs/bootstrap/dist/js/bootstrap.min.js" async></script>
+<script src="app/libs/sweetalert2/dist/sweetalert2.min.js" async></script>
+<script src="app/libs/core-js/core.js" async></script>
+<script src="app/libs/angular/ui-bootstrap-tpls-0.12.0.min.js" async></script>
 
 
 <script src="app/js/app.js"></script>
 
 
-<!-- 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
 </html>

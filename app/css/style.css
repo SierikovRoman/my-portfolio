@@ -80,6 +80,7 @@ a:hover {
 
 a:focus {
   outline: none !important;
+  text-decoration: none;
 }
 
 .cf {
@@ -94,9 +95,6 @@ a:focus {
 
 .top_block:before {
   content: ' ';
-  background-image: url("/app/images/wallpaper_2.png");
-  -webkit-background-size: cover;
-          background-size: cover;
   opacity: 0.5;
   width: 100%;
   height: 200px;

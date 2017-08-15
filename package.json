@@ -1,5 +1,6 @@
 {
   "name": "prod",
+  "short_name": "Portfolio",
   "version": "1.0.0",
   "description": "Porfolio",
   "main": "app.js",

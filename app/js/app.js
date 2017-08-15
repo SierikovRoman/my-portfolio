@@ -134,12 +134,12 @@
 
 			if ($scope.doneVideo != null){
 				$scope.video = $scope.doneVideo;
-				// console.log("local");
+				console.log("local");
 			} else{
 				$http.post('../../app/php/get_video.php').success(function(data){
 					if(data != null){
 						$scope.video = data;
-						// console.log("server");
+						console.log("server");
 					};
 				});
 			}
