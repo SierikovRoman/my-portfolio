@@ -56,26 +56,37 @@
 	setToLocalStorage();
 		function setToLocalStorage(){
 
-			/* set video data to local storage */
-			$http.post('../../app/php/get_video.php').success(function(data){
-				if(data != null){
-					localStorage.setItem('video', JSON.stringify(data));
-				};
-			});
+			$scope.localVideo = localStorage.getItem('video');
+			$scope.localSet = localStorage.getItem('set');
+			$scope.localPhoto = localStorage.getItem('photo');
 
-			/* set photo set data to local storage */
-			$http.post('../../app/php/get_set.php').success(function(data){
-				if(data != null){
-					localStorage.setItem('set', JSON.stringify(data));
-				};
-			});
+			if ($scope.localVideo == null || $scope.localSet == null || $scope.localPhoto == null) {
 
-			/* set photos data to local storage */
-			$http.post('../../app/php/get_photo.php').success(function(data){
-				if(data != null){
-					localStorage.setItem('photo', JSON.stringify(data));
-				};
-			});	
+				/* set video data to local storage */
+				$http.post('../../app/php/get_video.php').success(function(data){
+					if(data != null){
+						localStorage.setItem('video', JSON.stringify(data));
+					};
+				});
+
+				/* set photo set data to local storage */
+				$http.post('../../app/php/get_set.php').success(function(data){
+					if(data != null){
+						localStorage.setItem('set', JSON.stringify(data));
+					};
+				});
+
+				/* set photos data to local storage */
+				$http.post('../../app/php/get_photo.php').success(function(data){
+					if(data != null){
+						localStorage.setItem('photo', JSON.stringify(data));
+					};
+				});
+
+				console.log("local was null");
+			} else{
+				console.log("local is full");
+			}
 
 		};
 
@@ -134,12 +145,12 @@
 
 			if ($scope.doneVideo != null){
 				$scope.video = $scope.doneVideo;
-				console.log("local");
+				// console.log("local");
 			} else{
 				$http.post('../../app/php/get_video.php').success(function(data){
 					if(data != null){
 						$scope.video = data;
-						console.log("server");
+						// console.log("server");
 					};
 				});
 			}
@@ -173,6 +184,7 @@
 		$scope.checkItem = "";
 
 		$scope.getPhoto = function (set) {
+
 			$scope.setName = set['name'];
 			$scope.setId = set['id'];
 			$scope.photo = [];

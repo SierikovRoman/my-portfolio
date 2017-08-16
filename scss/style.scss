@@ -302,6 +302,10 @@ li{
 //===============================================
 //===============================================
 
+// .modal{
+//     display: none $i;
+// }
+
 .modal-dialog{
     width: 100% $i;
     margin: 0 $i;
@@ -330,8 +334,6 @@ li{
 
 .item{
     width: auto;
-    // border: 2px solid green;
-    // position: relative;
     position: absolute;
     top: 50%;
 }

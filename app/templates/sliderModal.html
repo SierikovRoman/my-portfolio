@@ -4,7 +4,7 @@
       <button type="button" class="close close-slider" ng-click="$close()" data-dismiss="modal" aria-label="Close"><span class="slider-close" aria-hidden="true">&times;</span></button>
       <h4 class="set-title" align="center">{{setName}}</h4>
     </div>
-    <div class="modal-body mb">
+    <div class="modal-body mb ">
         <div class="my-slider" align="center">
           <div class="item" ng-repeat="p in photo" >
             <img ng-src="{{'/app/images/' + p}}">
@@ -37,16 +37,6 @@ function getHeight(){
   $('.item').css({
     height: h-122
   });
-  $('.im').css({
-    // height: h-122
-    // height: '100%'
-  });
-  // const mq = window.matchMedia( "(max-width: 425px)" );
-  // if (mq.matches) {
-  // $('.im').css({
-  //     height: 'auto'
-  //   });
-  // }
 };
 
 getHeight();

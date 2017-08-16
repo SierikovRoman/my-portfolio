@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="app/libs/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="app/libs/slick-1.6.0/slick/slick.css">
 	<link rel="stylesheet" type="text/css" href="app/libs/slick-1.6.0/slick/slick-theme.css">
-	<link rel="stylesheet" type="text/css" href="app/libs/sweetalert2/dist/sweetalert2.css">
+	<link rel="stylesheet" type="text/css" href="app/libs/sweetalert2/dist/sweetalert2.min.css">
 	<link rel="stylesheet" type="text/css" href="app/css/style.css">
 	<link rel="stylesheet" type="text/css" href="app/css/animate.css">
 
@@ -37,12 +37,12 @@
 <script src="app/libs/jquery/dist/jquery.min.js"></script> 
 <script src="app/js/script.js"></script>
 
-<script src="app/libs/slick-1.6.0/slick/slick.js"></script>  
+<script src="app/libs/slick-1.6.0/slick/slick.min.js"></script>  
 <script src="app/libs/angular/angular.js"></script>
 <script src="app/libs/angular/angular-route.min.js"></script>
 <script src="app/libs/bootstrap/dist/js/bootstrap.min.js" async></script>
 <script src="app/libs/sweetalert2/dist/sweetalert2.min.js" async></script>
-<script src="app/libs/core-js/core.js" async></script>
+<!-- <script src="app/libs/core-js/core.js" async></script> -->
 <script src="app/libs/angular/ui-bootstrap-tpls-0.12.0.min.js" async></script>
 
 

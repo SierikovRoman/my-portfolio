@@ -1,6 +1,6 @@
 <div class="col-xs-12 photo_block"> 
 
-       <div class="col-md-4 col-sm-6 col-xs-12 i animated fadeIn" ng-repeat="s in set">	
+       <div class="col-md-4 col-sm-6 col-xs-12 i" ng-repeat="s in set">	
       	<form name="setForm" method="POST">
           	<a href="" class="image-block" ng-click="getPhoto(s)">
 			    <img ng-src="{{'/app/images/sets/' + s.url}}" alt="{{s.name}}" class="image">
