@@ -82,9 +82,9 @@ $large: 1200px;
 /* MAIN BLOCK */
 
 body{
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: scroll; 
+    // height: 100%;
+    // overflow-x: hidden;
+    // overflow-y: scroll; 
 }
 
 .btn:focus{
@@ -131,20 +131,14 @@ a:focus{
     margin-left: auto;
     margin-right: auto;
     top: 10px;
-    // outline: 1px solid red;
     height: 120px;
 }
 
 .brand-name{
     font-family: $plume;
-    font-size: 8vw; //126px 10em
+    // color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 0, 0, 0.8);
     margin-top: 0px;
-}
-
-.brand-desc{
-    font-family: $plume;
-    font-size: 4vw; //126px 10em
-    margin-top: -25px;
 }
 
 .order-block{
@@ -185,17 +179,18 @@ a:focus{
 }
 
 .nv{
-    // padding: 0 5px 0 5px;
-    padding: 0;
-    overflow: hidden;
+    background-image: url("/app/images/navigation.png");
+    background-size: cover;
 }
 
 .nav-option{
     font-family: $roboto-c_b;
     letter-spacing: 0.05em;
     font-size: 2.7em; // 2.03vw, 2.7em, 24pt
-    color: #111;
+    color: rgba(255, 255, 255, 1);
     overflow: hidden;
+    border: 3px solid #FFF;
+    max-width: 150px;
 }
 
 /* VIDEO BLOCK */
@@ -301,10 +296,6 @@ li{
 /* SLIDER MODAL */
 //===============================================
 //===============================================
-
-// .modal{
-//     display: none $i;
-// }
 
 .modal-dialog{
     width: 100% $i;
@@ -445,22 +436,25 @@ textarea {
     border-radius: 0 $i;
 }
 
-/* Preloader */
-
-.preloader{
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-    background: #333 url('/app/images/wallpaper_2.png') no-repeat center center;
-}
-
-
 
 /* MEDIA */
+
+@media screen and (min-width:1440px) and (max-width: 2560px) {
+
+.brand-name{
+    font-size: 8vw; //126px 10em
+}
+
+}
+
+@media screen and (max-width: 1440px) {
+
+.brand-name{
+    margin-top: 10px;
+    font-size: 10vw; //126px 10em
+}
+
+}
 
 @media screen and (max-width: 1200px) {
 
@@ -471,11 +465,6 @@ textarea {
 
 .nav-option{
     font-size: 3vw;
-}
-
-.brand-desc{
-    margin-top: 0;
-    font-size: 4vw; //126px 10em
 }
 
 }
@@ -531,16 +520,9 @@ textarea {
 @media screen and (max-width: 480px) {
 
 .brand-name{
-    margin-top: 5px;
-    font-size: 14vw; //126px 10em
+    margin-top: 55px;
+    font-size: 16vw; //126px 10em
 }
-
-.brand-desc{
-    margin-top: 0;
-    font-size: 6vw; //126px 10em
-}
-
-
 
 }
 

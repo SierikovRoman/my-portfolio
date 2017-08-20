@@ -42,6 +42,17 @@
 
 	});
 
+	app.controller("LoaderController",['$scope', function($scope){
+
+		$scope.show = function(){
+		$('.description').show('slow');	
+		// console.log("tersr");
+		// $('.preloader').addClass('hide');
+		// $('.cf').removeClass('hide');
+		};
+
+	}]);
+
 	app.controller("MainController",['$scope','$http', function($scope,$http){
 
 	getStatistic();
