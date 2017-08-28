@@ -58,6 +58,33 @@
 /* Colors variable */
 /* Size variable */
 /* MAIN BLOCK */
+body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: #191919;
+}
+
+.top {
+  background-image: url("/app/images/top.jpg");
+  background-size: cover;
+  -webkit-border-radius: 50px;
+          border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  display: none;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9;
+  border: none;
+  outline: none;
+}
+
+.top:hover {
+  opacity: 0.6;
+}
+
 .btn:focus {
   outline: none !important;
 }
@@ -83,30 +110,26 @@ a:focus {
 
 .top_block {
   position: relative;
+  height: 300px;
   overflow: hidden;
   padding: 0;
+  background-color: #FFF;
 }
 
-.top_block:before {
-  content: ' ';
-  opacity: 0.5;
-  width: 100%;
-  height: 200px;
-  display: block;
-  position: relative;
-}
-
-.brand {
+video#video {
   position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  top: 10px;
-  height: 120px;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .brand-name {
   font-family: "Plume", serif;
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(255, 255, 255, 0.8);
   margin-top: 0px;
 }
 
@@ -114,24 +137,42 @@ a:focus {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
-  top: 150px;
+  top: 250px;
   left: 0;
   right: 0;
-  width: 150px;
+  width: 100%;
   height: 50px;
-  text-align: right;
+  text-align: center;
   padding: 0;
 }
 
 .order-button {
   background-color: transparent;
-  color: #111;
+  color: #FFF;
   font-family: "Roboto Medium", serif;
   font-size: 22px;
-  border: 3px solid #111;
+  border: 3px solid #FFF;
+  -webkit-box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5);
   -webkit-border-radius: 0px;
           border-radius: 0px;
   padding: 0 5px 0 5px;
+}
+
+.order-button:hover {
+  color: #FFF;
+}
+
+.order-button:active {
+  color: #FFF;
+}
+
+.order-button:focus {
+  color: #FFF;
+}
+
+.order-button:visited {
+  color: #FFF;
 }
 
 .glyphicon-envelope {
@@ -143,23 +184,97 @@ a:focus {
 }
 
 /* NAVIGATION-MENU */
-.nav-menu {
-  padding: 0;
+.navbar {
+  margin-top: 300px;
+  margin-bottom: 30px;
+  background-color: #050505;
 }
 
 .nv {
-  background-image: url("/app/images/navigation.png");
-  background-size: cover;
+  padding: 0 0 5px 0;
 }
 
 .nav-option {
-  font-family: "RobotoCondensed-Bold", sans-serif;
-  letter-spacing: 0.05em;
+  font-family: "Roboto Thin", serif;
+  font-weight: 500;
   font-size: 2.7em;
   color: white;
   overflow: hidden;
-  border: 3px solid #FFF;
-  max-width: 150px;
+  border: 1px solid #FFF;
+  max-width: 210px;
+  margin-top: 15px !important;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.nav-option:hover {
+  background-color: white;
+  color: #000;
+}
+
+.icon-bar {
+  background-color: #FFF;
+}
+
+.sidenav-mobile {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-top: 60px;
+  text-align: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.sidenav-mobile .closebtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 15px 0 0;
+  text-decoration: none;
+  font-size: 45px;
+  color: #818181;
+  cursor: pointer;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: #FFF;
+}
+
+.nm {
+  padding: 0 60px 0 60px;
+}
+
+.sidenav-mobile .nav-mobile {
+  font-family: "Roboto Thin", serif;
+  font-size: 2.7em;
+  width: 100%;
+  padding: 0;
+  color: #FFF;
+  overflow: hidden;
+  border: 1px solid #FFF;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.nav-mobile:hover {
+  color: #111;
+}
+
+li .nav-mobile {
+  float: none !important;
 }
 
 /* VIDEO BLOCK */
@@ -169,18 +284,41 @@ li {
 }
 
 .video-table {
-  margin-top: 20px;
+  margin-top: 0;
 }
 
-.video {
+tr:hover {
+  background-color: transparent !important;
+}
+
+td {
+  border-top: none !important;
+  border-bottom: 2px solid #828282 !important;
+}
+
+.video-v {
   width: 100%;
   height: 400px;
   display: block;
 }
 
+.video_title {
+  font-family: "Roboto Medium", serif;
+  font-size: 2.4em;
+  color: white;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+
+.video_desc {
+  font-family: "Roboto Thin", serif;
+  font-size: 1.4em;
+  color: white;
+}
+
 /* PHOTO BLOCK */
 .photo_block {
-  margin: 10px 0 20px 0;
+  margin: 0px 0 20px 0;
   padding: 0;
   overflow: hidden;
 }
@@ -212,7 +350,7 @@ li {
   font-family: "Roboto Thin", serif;
   letter-spacing: 0.05em;
   font-size: 18pt;
-  color: #000;
+  color: #FFF;
   text-align: left;
   overflow: hidden;
 }
@@ -223,6 +361,25 @@ li {
   font-size: 18pt;
   color: #FFF;
   overflow: hidden;
+}
+
+/* CONTACTS */
+.name {
+  color: #FFF;
+}
+
+.text {
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.name_d {
+  color: #FFF;
+}
+
+.slash {
+  font-size: 24px;
+  font-weight: 100;
 }
 
 /* COMMING SOON */
@@ -240,17 +397,50 @@ li {
 
 .footer {
   width: 100%;
-  height: 40px;
+  height: 90px;
   background-color: #000;
   text-align: center;
   padding-top: 10px;
   margin-top: 40px;
 }
 
-.footer-text {
-  font-family: "Roboto Thin", serif;
-  font-size: 14px;
+.inst {
+  height: 70px;
+}
+
+.inst-profile {
+  display: inline-block;
+  padding: 5px 0 5px 0;
+}
+
+.inst-link {
+  text-decoration: none;
   color: rgba(255, 255, 255, 0.8);
+  font-family: "Roboto Light", serif;
+  font-size: 14px;
+}
+
+.inst-link:hover {
+  color: white;
+}
+
+.footer-text {
+  font-family: Arial;
+  font-size: 18px;
+  padding: 23px 0 0 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contrast {
+  filter: contrast(5%);
+  -webkit-filter: contrast(5%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.contrast:hover {
+  filter: contrast(50%);
+  -webkit-filter: contrast(50%);
 }
 
 /* SLIDER MODAL */
@@ -393,21 +583,21 @@ textarea {
 /* MEDIA */
 @media screen and (min-width: 1440px) and (max-width: 2560px) {
   .brand-name {
-    font-size: 8vw;
+    font-size: 266px;
   }
 }
 
 @media screen and (max-width: 1440px) {
   .brand-name {
-    margin-top: 10px;
-    font-size: 10vw;
+    font-size: 206px;
+    margin-top: 40px;
   }
 }
 
 @media screen and (max-width: 1200px) {
   .brand-name {
-    margin-top: 10px;
-    font-size: 12vw;
+    font-size: 186px;
+    margin-top: 50px;
   }
   .nav-option {
     font-size: 3vw;
@@ -416,8 +606,10 @@ textarea {
 
 @media screen and (max-width: 992px) {
   .brand-name {
-    margin-top: 10px;
-    font-size: 12vw;
+    font-size: 166px;
+    line-height: 70%;
+    margin-top: 20px;
+    padding: 0 80px 50px 80px;
   }
   .nav-option {
     font-size: 3vw;
@@ -430,8 +622,10 @@ textarea {
 
 @media screen and (max-width: 768px) {
   .brand-name {
-    margin-top: 40px;
-    font-size: 12vw;
+    font-size: 166px;
+    margin-top: 20px;
+    line-height: 70%;
+    padding: 0 50px 50px 50px;
   }
   .nav-option {
     font-size: 3vw;
@@ -439,6 +633,25 @@ textarea {
   .brand-desc {
     margin-top: 0;
     font-size: 4vw;
+  }
+  /* Navigation */
+}
+
+@media screen and (max-width: 726px) {
+  .brand-name {
+    font-size: 146px;
+    margin-top: 40px;
+    line-height: 70%;
+    padding: 0 50px 50px 50px;
+  }
+}
+
+@media screen and (max-width: 636px) {
+  .brand-name {
+    font-size: 126px;
+    margin-top: 60px;
+    line-height: 70%;
+    padding: 0;
   }
 }
 
@@ -455,7 +668,39 @@ textarea {
 
 @media screen and (max-width: 480px) {
   .brand-name {
-    margin-top: 55px;
-    font-size: 16vw;
+    font-size: 106px;
+    line-height: 100%;
+    margin-top: 40px;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .brand-name {
+    font-size: 106px;
+    line-height: 100%;
+    margin-top: 40px;
+    padding: 0;
+  }
+  .video_block {
+    padding: 0 !important;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .brand-name {
+    font-size: 96px;
+    line-height: 100%;
+    margin-top: 40px;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .brand-name {
+    font-size: 76px;
+    line-height: 100%;
+    margin-top: 60px;
+    padding: 0;
   }
 }

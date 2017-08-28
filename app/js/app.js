@@ -23,6 +23,11 @@
 			templateUrl: '/app/templates/video.html',
 			controller: 'VideoController'
 		})
+
+		.when('/Contacts', {
+			templateUrl: '/app/templates/contacts.html',
+			controller: 'ContactsController'
+		})
 		
 		.when('/Coming_soon', {
 			templateUrl: '/app/templates/coming_soon.html',
@@ -45,10 +50,7 @@
 	app.controller("LoaderController",['$scope', function($scope){
 
 		$scope.show = function(){
-		$('.description').show('slow');	
-		// console.log("tersr");
-		// $('.preloader').addClass('hide');
-		// $('.cf').removeClass('hide');
+			$('.description').show('slow');	
 		};
 
 	}]);
@@ -76,6 +78,7 @@
 				/* set video data to local storage */
 				$http.post('../../app/php/get_video.php').success(function(data){
 					if(data != null){
+						$scope.serv_video = data;
 						localStorage.setItem('video', JSON.stringify(data));
 					};
 				});
@@ -83,6 +86,7 @@
 				/* set photo set data to local storage */
 				$http.post('../../app/php/get_set.php').success(function(data){
 					if(data != null){
+						$scope.set_video = data;
 						localStorage.setItem('set', JSON.stringify(data));
 					};
 				});
@@ -90,6 +94,7 @@
 				/* set photos data to local storage */
 				$http.post('../../app/php/get_photo.php').success(function(data){
 					if(data != null){
+						$scope.photo_video = data;
 						localStorage.setItem('photo', JSON.stringify(data));
 					};
 				});
@@ -144,6 +149,19 @@
 
 	}]);
 
+	app.controller("NavigationController",['$scope','$http', function($scope,$http){
+
+	$scope.openNavigation = function(){
+		document.getElementById("sidenav-mobile").style.width = "320px";
+		console.log("open");
+	};
+
+	$scope.closeNavigation = function(){
+		document.getElementById("sidenav-mobile").style.width = "0";
+		console.log("close");
+	};
+
+	}]);
 
 	app.controller("VideoController",['$scope','$http', function($scope,$http){
 
@@ -236,6 +254,9 @@
 
 	}]);
 
+	app.controller("ContactsController",['$scope','$http', function($scope,$http){
+
+	}]);
 
 	app.controller("OrganizationController",['$scope','$http', function($scope,$http){
 

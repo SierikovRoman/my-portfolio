@@ -12,13 +12,14 @@
 	<link rel="stylesheet" type="text/css" href="app/libs/sweetalert2/dist/sweetalert2.min.css">
 	<link rel="stylesheet" type="text/css" href="app/css/style.css">
 	<link rel="stylesheet" type="text/css" href="app/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="app/libs/Hover-master/css/hover-min.css">
 
 	<script src="app/libs/jquery/dist/jquery.min.js"></script>
 	<script src="app/js/script.js"></script>
 
 </head>
 <body ng-app="MyApp">
-<div class="preloader">
+<div class="preloader hide">
 	<img src="app/images/waller.jpg" class="myimg">
 	<div class="col-xs-12 start-btn" align="center" ng-controller="LoaderController">
 		<button class="start" ng-click="show()">JUST TOUCH ME</button>
@@ -63,33 +64,37 @@
 		}
 	</style>
 	<script>
-	$(document).ready(function(){
+		$(document).ready(function(){
 
-	$('.start').hover(
-		function(){
-			$(this).addClass('animated pulse');
-		},
-		function(){
-			$(this).removeClass('animated pulse');
-		}
-	)
-	});
-</script>
+		$('.start').hover(
+			function(){
+				$(this).addClass('animated pulse');
+			},
+			function(){
+				$(this).removeClass('animated pulse');
+			}
+		)
+		});
+	</script>
 </div>
 
-<div class="container-fluid cf hide" ng-controller="MainController">
+<div class="container-fluid cf " ng-controller="MainController">
 
 	<ng-include src="'app/templates/top_block.html'"></ng-include>
 
-	<div class="container">
+	
 	<ng-include src="'app/templates/nav-menu.html'"></ng-include>
+	<div class="container">
 		<ng-view></ng-view>
 	</div>
 	
 	<ng-include src="'app/templates/emailUsModal.html'"></ng-include>
 	<ng-include src="'app/templates/footer.html'"></ng-include>
 
+<button class="top"></button>
 </div>
+
+<!-- <button class="top"></button> -->
 
 <script src="app/libs/slick-1.6.0/slick/slick.min.js"></script>  
 <script src="app/libs/angular/angular.js"></script>
