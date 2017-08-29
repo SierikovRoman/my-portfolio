@@ -3,8 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Portfolio</title>
+	<title>The Creators</title>
 	<!-- <base href="/"> -->
+	<link rel="icon" href="app/images/icons/icon.png">
 
 	<link rel="stylesheet" type="text/css" href="app/libs/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="app/libs/slick-1.6.0/slick/slick.css">
@@ -19,8 +20,7 @@
 
 </head>
 <body ng-app="MyApp">
-<div class="preloader hide">
-	<img src="app/images/waller.jpg" class="myimg">
+<div class="preloader">
 	<div class="col-xs-12 start-btn" align="center" ng-controller="LoaderController">
 		<button class="start" ng-click="show()">JUST TOUCH ME</button>
 		<h3 class="description">Be patient - we'll opened soon ;)</h3>
@@ -29,17 +29,15 @@
 	<style type="text/css">
 		.preloader {
 		    position: absolute;
-		    height: 100%;
 		    width: 100%;
-		    overflow: hidden;
-		}
-		.myimg {
-		    height: inherit;
-		    filter: blur(0.5px);
+		    background-image: url(app/images/waller.jpg);
+		    -webkit-background-size: cover;
+		     background-size: cover; 
+		    z-index: 999999;
 		}
 		.start-btn{
 			position: absolute;
-			top: 49%;
+			top: 40%;
 		}
 		.start{
 			background-color: transparent;
@@ -66,6 +64,16 @@
 	<script>
 		$(document).ready(function(){
 
+		function getHeight(){
+			var h = $(window).height();
+			$('.preloader').css({
+				height : h
+			});
+		};
+		getHeight();
+
+		$(window).resize(getHeight);
+
 		$('.start').hover(
 			function(){
 				$(this).addClass('animated pulse');
@@ -78,7 +86,7 @@
 	</script>
 </div>
 
-<div class="container-fluid cf " ng-controller="MainController">
+<div class="container-fluid cf" ng-controller="MainController">
 
 	<ng-include src="'app/templates/top_block.html'"></ng-include>
 
@@ -99,6 +107,9 @@
 <script src="app/libs/slick-1.6.0/slick/slick.min.js"></script>  
 <script src="app/libs/angular/angular.js"></script>
 <script src="app/libs/angular/angular-route.min.js"></script>
+<script src="app/libs/angular-sanitize.js"></script>
+<script src="app/libs/angular-translate/dist/angular-translate.js"></script>
+<script src="app/libs/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
 <script src="app/libs/bootstrap/dist/js/bootstrap.min.js" async></script>
 <script src="app/libs/sweetalert2/dist/sweetalert2.min.js" async></script>
 <script src="app/libs/angular/ui-bootstrap-tpls-0.12.0.min.js" async></script>

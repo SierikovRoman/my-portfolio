@@ -1,26 +1,3 @@
-<!-- <div class="col-xs-12 nav-menu">
-	<div class="col-xs-3 nv" align="center">
-		<a href="#/Photo">
-			<h3 class="nav-option">PHOTO</h3>
-		</a>
-	</div>
-	<div class="col-xs-3 nv" align="center">
-		<a href="#/Video">
-			<h3 class="nav-option">VIDEO</h3>
-		</a>
-	</div>
-	<div class="col-xs-3 nv" align="center">
-		<a href="#/Contacts">
-			<h3 class="nav-option">CONTACTS</h3>
-		</a>
-	</div>
-	<div class="col-xs-3 nv" align="center">
-		<a href="#/Coming_soon">
-			<h3 class="nav-option">SOON</h3>
-		</a>
-	</div>
-</div> -->
-
 <nav class="navbar" ng-controller="NavigationController">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -38,22 +15,22 @@
 
     <div class="col-xs-3 nv" align="center">
 		<a href="#/Photo">
-			<h3 class="nav-option">PHOTO</h3>
+			<h3 class="nav-option">{{ 'nav_1' | translate }}</h3>
 		</a>
 	</div>
 	<div class="col-xs-3 nv" align="center">
 		<a href="#/Video">
-			<h3 class="nav-option">VIDEO</h3>
+			<h3 class="nav-option">{{ 'nav_2' | translate }}</h3>
 		</a>
 	</div>
 	<div class="col-xs-3 nv" align="center">
 		<a href="#/Contacts">
-			<h3 class="nav-option">CONTACTS</h3>
+			<h3 class="nav-option">{{ 'nav_3' | translate }}</h3>
 		</a>
 	</div>
 	<div class="col-xs-3 nv" align="center">
 		<a href="#/Coming_soon">
-			<h3 class="nav-option">SOON</h3>
+			<h3 class="nav-option">{{ 'nav_4' | translate }}</h3>
 		</a>
 	</div>
 
@@ -63,11 +40,33 @@
 <div id="sidenav-mobile" class="sidenav-mobile">
 	<a class="closebtn" ng-click="closeNavigation()">&times;</a>
 	<ul class="nav">
-		<li class="nm"><a href="#/Photo" class="nav-mobile" ng-click="closeNavigation()">PHOTO</a></li>
-		<li class="nm"><a href="#/Video" class="nav-mobile" ng-click="closeNavigation()">VIDEO</a></li>
-		<li class="nm"><a href="#/Contacts" class="nav-mobile" ng-click="closeNavigation()">CONTACTS</a></li>       
-		<li class="nm"><a href="#/Coming_soon" class="nav-mobile" ng-click="closeNavigation()">SOON</a></li>       
+		<li class="nm"><a href="#/Photo" class="nav-mobile" ng-click="closeNavigation()">{{ 'nav_1' | translate }}</a></li>
+		<li class="nm"><a href="#/Video" class="nav-mobile" ng-click="closeNavigation()">{{ 'nav_2' | translate }}</a></li>
+		<li class="nm"><a href="#/Contacts" class="nav-mobile" ng-click="closeNavigation()">{{ 'nav_3' | translate }}</a></li>       
+		<li class="nm"><a href="#/Coming_soon" class="nav-mobile" ng-click="closeNavigation()">{{ 'nav_4' | translate }}</a></li>       
 	</ul>
+	<div class="languages">
+		<span class="lang">
+			<a href="" class="inst-link" ng-click="changeLng('en'); closeNavigation()">
+				<img src="/app/images/icons/en.png" width="35px" height="35px" class="contrast">
+			</a>
+		</span>
+		<span class="lang">
+			<a href="" class="inst-link" ng-click="changeLng('ru'); closeNavigation()">
+				<img src="/app/images/icons/ru.png" width="35px" height="35px" class="contrast">
+			</a>
+		</span>
+		<span class="lang">
+			<a href="" class="inst-link" ng-click="changeLng('pl'); closeNavigation()">
+				<img src="/app/images/icons/pl.png" width="35px" height="35px" class="contrast">
+			</a>
+		</span>
+		<span class="lang">
+			<a href="" class="inst-link" ng-click="changeLng('ukr'); closeNavigation()">
+				<img src="/app/images/icons/ukr.png" width="55px" height="35px" class="contrast">
+			</a>
+		</span>
+	</div>
 </div>
 
 </nav>

@@ -1,5 +1,5 @@
 <div class="row-fluid footer" align="center">
-	<div class="col-xs-12 col-md-4 inst" align="left">
+	<div class="col-xs-12 col-sm-4 hidden-xs inst" align="left">
 
 		<div class="col-xs-12">
 			<span class="inst-profile">
@@ -19,10 +19,29 @@
 		</div>
 		
 	</div>
-	<div class="col-xs-12 col-md-4 hidden-xs">
-		<p class="footer-text">All right reserved The Creators. © 2017</p>
+	<div class="col-xs-12 col-sm-4 hidden-xs">
+		<p class="footer-text">{{ 'license' | translate }}</p>
 	</div>
-	<div class="col-xs-12 col-md-4">
-		<!-- change language -->
+	<div class="col-xs-12 col-sm-4 lang-f hidden-xs">
+		<span class="lang-f">
+			<a href="" class="inst-link" ng-click="changeLng('en')">
+				<img src="/app/images/icons/en.png" width="35px" height="35px" class="contrast">
+			</a>
+		</span>
+		<span class="lang-f">
+			<a href="" class="inst-link" ng-click="changeLng('ru')">
+				<img src="/app/images/icons/ru.png" width="35px" height="35px" class="contrast">
+			</a>
+		</span>
+		<span class="lang-f">
+			<a href="" class="inst-link" ng-click="changeLng('pl')">
+				<img src="/app/images/icons/pl.png" width="35px" height="35px" class="contrast">
+			</a>
+		</span>
+		<span class="lang-f">
+			<a href="" class="inst-link" ng-click="changeLng('ukr')">
+				<img src="/app/images/icons/ukr.png" width="55px" height="35px" class="contrast">
+			</a>
+		</span>
 	</div>
 </div>

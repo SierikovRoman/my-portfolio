@@ -1,7 +1,7 @@
 // Application module
 (function () {
 
-	var app = angular.module('MyApp', ['ngRoute', 'ui.bootstrap']);
+	var app = angular.module('MyApp', ['ngRoute', 'ui.bootstrap', 'pascalprecht.translate', 'ngSanitize']);
 	var $window;
 	app.config(function ($locationProvider, $routeProvider, $windowProvider, $sceDelegateProvider) {
 		$window = $windowProvider.$get();
@@ -47,15 +47,52 @@
 
 	});
 
+	/* Translate */
+	app.config(['$translateProvider', function ($translateProvider) {
+	
+	if(JSON.parse(localStorage.getItem('language')) !== null){
+		$translateProvider.preferredLanguage(JSON.parse(localStorage.getItem('language')));
+	}else{
+		$translateProvider.preferredLanguage('en');
+	}
+	$translateProvider.useSanitizeValueStrategy('escaped');
+
+	$translateProvider.useStaticFilesLoader({
+        prefix: '/app/languages/', //относительный путь, например: /languages/
+        suffix: '.json' //расширение файлов
+   	});
+
+
+	}]);
+
 	app.controller("LoaderController",['$scope', function($scope){
 
 		$scope.show = function(){
 			$('.description').show('slow');	
+			$('.cf').show('slow');
+			$('.preloader').hide('slow').delay(3000);
 		};
+
+
 
 	}]);
 
-	app.controller("MainController",['$scope','$http', function($scope,$http){
+	app.controller("MainController",['$scope','$http','$translate', function($scope,$http,$translate){
+
+	setLanguage();
+	function setLanguage(){
+		localStorage.setItem('language', JSON.stringify('en'));
+	}
+
+	$scope.changeLng = function( lang ) { 
+		localStorage.setItem('language', JSON.stringify(lang));
+		$translate.use( lang );
+	}
+
+	// Проверка текущего языка:
+	// $scope.currentLng = function( lang ) {
+	// 	return $translate.use() == lang;
+	// }
 
 	getStatistic();
 	function getStatistic(){
@@ -150,6 +187,10 @@
 	}]);
 
 	app.controller("NavigationController",['$scope','$http', function($scope,$http){
+
+	$scope.changeLanguage = function (key) {
+	    $translate.use(key);
+	  };
 
 	$scope.openNavigation = function(){
 		document.getElementById("sidenav-mobile").style.width = "320px";
